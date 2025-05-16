@@ -1,47 +1,101 @@
-# Automated-Patch-Management-System
+ Automated Patch Management System
 
-1. Automated Patch Management System
-Project Overview:
-This project involves building a system to automatically check for, download, and apply patches to a group of servers. The system ensures that servers are updated with the latest security patches and can handle rollback mechanisms in case of failures.
+An automated patch management system built using **Flutter** (frontend) and **Firebase** (backend). This app enables admins to upload patches and users to view/download them. It simplifies patch tracking, management, and secure distribution.
 
-Features:
+---
 
-Scans for available updates for servers
-Downloads and applies patches automatically
-Monitors patch success or failure
-Automatically rolls back in case of failure
-Generates reports on patch status and system health
-Technologies:
+ 📱 Features
 
-Java (Spring Boot)
-REST APIs
-JDBC for database interaction
-JSON for data communication
-MySQL for patch information storage
-Multithreading for parallel patch deployment
+- ✅ Firebase Authentication (Login/Register)
+- 👨‍💻 Admin Panel for uploading patch files
+- 👥 User Interface to view/download patches
+- ☁️ Firebase Storage for patch hosting
+- 🔄 Real-time patch list via Firestore
+- 🔐 Role-based user access (Admin/User)
+- 📦 File picker integration
 
-Report Outline:
+---
 
-Introduction: Discuss the importance of patch management for security and stability.
-Objectives: Automate the patching process and provide robust rollback mechanisms.
-System Architecture: Explain the components like Patch Repository, Patch Service, and Database.
-Implementation: Describe the Java code used, threading for parallel deployment, and database setup for patch tracking.
-Testing: Discuss testing scenarios for both successful and failed patch applications.
-Conclusion: Summarize the benefits of automation in patch management.
-2. Containerized Application Deployment System using Java and Docker
-Project Overview:
-This project involves creating a containerized deployment system for Java applications using Docker. The system can take a Java application, containerize it, and deploy it in a Docker environment. It includes features like continuous integration and monitoring.
+ 🏗️ Tech Stack
 
-Features:
+| Technology     | Purpose                  |
+|----------------|---------------------------|
+| Flutter        | UI development            |
+| Dart           | Programming language      |
+| Firebase Auth  | User authentication       |
+| Cloud Firestore| Patch data storage        |
+| Firebase Storage| File uploads             |
+| File Picker    | Select patch files locally|
 
-Automated containerization of Java applications
-Deployment of containers to Docker
-Basic health monitoring of deployed containers
-Rollback in case of failed deployments
-Technologies:
+---
 
-Java (Maven, Spring Boot)
-Docker CLI integration
-Jenkins for CI/CD
-REST API for interacting with Docker
-Prometheus and Grafana for monitoring
+ 🛠️ Setup Instructions
+
+ 1. 🔥 Firebase Setup
+
+- Go to [Firebase Console](https://console.firebase.google.com/)
+- Create a new project
+- Enable **Authentication** → Email/Password
+- Create **Firestore Database**
+- Enable **Firebase Storage**
+
+Download `google-services.json` and place it in `android/app/`
+
+---
+
+ 2. 🧑‍💻 Clone the Repo
+
+```bash
+git clone https://github.com/your-username/patch-management-flutter.git
+cd patch-management-flutter
+````
+
+---
+
+ 3. 📦 Install Dependencies
+
+```bash
+flutter pub get
+```
+
+---
+
+### 4. ▶️ Run the App
+
+```bash
+flutter run
+```
+
+---
+
+ 👤 User Roles
+
+* Admin Can upload patches (title, description, file)
+* User Can view and download available patches
+* Role-based access can be expanded via Firestore rules or user metadata*
+
+---
+
+ 📁 Project Structure
+
+```
+lib/
+├── auth/              # Login & registration
+├── home/              # User & Admin dashboard
+├── models/            # Patch data model
+├── services/          # Firebase services
+├── widgets/           # Reusable components
+├── utils/             # Role management
+└── main.dart          # Entry point
+```
+
+---
+
+ 🚀 Future Improvements
+
+* ✅ Push Notifications (FCM)
+* ✅ Patch Version Control
+* ✅ Patch Deployment Status Tracking
+* ✅ Scheduled Updates
+* ✅ Admin Dashboard Analytics
+
